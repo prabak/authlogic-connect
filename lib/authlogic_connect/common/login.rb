@@ -1,7 +1,7 @@
 # This class is the main api for the user.
 # It is also required to properly sequence the save methods
 # for the different authentication types (oauth and openid)
-module AuthlogicConnect::Common::User
+module AuthlogicConnect::Common::Login
     
   def self.included(base)
     base.class_eval do
@@ -25,7 +25,8 @@ module AuthlogicConnect::Common::User
     end
     
     def authenticated_with?(service)
-      self.access_tokens.detect{|t| t.service_name.to_s == service.to_s}
+      #self.access_tokens.detect{|t| t.service_name.to_s == service.to_s}
+      self.access_tokens.reject{|t| t.service_name.to_s != service.to_s}.last
     end
     
     def update_attributes(attributes, &block)

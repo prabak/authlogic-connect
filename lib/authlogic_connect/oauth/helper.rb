@@ -2,7 +2,7 @@ module AuthlogicConnect::Oauth::Helper
   
   # options include "name"
   def oauth_register_hidden_input
-    oauth_input(:type => "user")
+    oauth_input(:type => "login")
   end
   
   def oauth_login_hidden_input

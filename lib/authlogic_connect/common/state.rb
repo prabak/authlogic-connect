@@ -38,7 +38,7 @@ module AuthlogicConnect::Common::State
     if is_auth_session?
       auth_type.to_s == "session"
     else
-      auth_type.to_s == "user"
+      auth_type.to_s == "login"
     end
   end
   

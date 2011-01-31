@@ -1,5 +1,5 @@
 module AuthlogicConnect::Openid
-  module User
+  module Login
     def self.included(base)
       base.class_eval do
         add_acts_as_authentic_module(AuthlogicConnect::Openid::Process, :prepend)

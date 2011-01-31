@@ -35,9 +35,9 @@ module AuthlogicConnect::Openid
             errors.add_to_base(result.message)
           end
           
-          token = AccessToken.find_by_key(openid_identifier.normalize_identifier, :include => [:user])
+          token = AccessToken.find_by_key(openid_identifier.normalize_identifier, :include => [:login])
           
-          self.attempted_record = token.user if token
+          self.attempted_record = token.login if token
           
           if !attempted_record
             if auto_register?
@@ -46,7 +46,7 @@ module AuthlogicConnect::Openid
               self.attempted_record.save
             else
               auth_session[:openid_identifier] = openid_identifier
-              errors.add(:user, "Could not find user in our database, have you registered with your openid account?")
+              errors.add(:login, "Could not find login in our database, have you registered with your openid account?")
             end
           end
         end

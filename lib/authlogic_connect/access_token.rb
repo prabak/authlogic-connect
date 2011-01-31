@@ -1,5 +1,5 @@
 class AccessToken < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :login
   
   def client
     self.class.client

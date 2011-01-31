@@ -1,4 +1,4 @@
-module AuthlogicConnect::Oauth::User
+module AuthlogicConnect::Oauth::Login
   
   def self.included(base)
     base.class_eval do
