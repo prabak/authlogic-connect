@@ -1,6 +1,6 @@
-class CreateUsers < ActiveRecord::Migration
+class CreateLogins < ActiveRecord::Migration
   def self.up
-    create_table :users do |t|
+    create_table :logins do |t|
       # authlogic
       t.timestamps
       t.string :login, :null => false
@@ -18,13 +18,13 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :active_token_id
     end
     
-    add_index :users, :login
-    add_index :users, :persistence_token
-    add_index :users, :last_request_at
-    add_index :users, :active_token_id
+    add_index :logins, :login
+    add_index :logins, :persistence_token
+    add_index :logins, :last_request_at
+    add_index :logins, :active_token_id
   end
 
   def self.down
-    drop_table :users
+    drop_table :logins
   end
 end

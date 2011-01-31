@@ -1,7 +1,7 @@
 class CreateTokens < ActiveRecord::Migration
   def self.up
     create_table :tokens do |t|
-      t.integer :user_id
+      t.integer :login_id
       t.string :type, :limit => 30
       t.string :key, :limit => 1024 # This has to be huge because of Yahoo's excessively large tokens
       t.string :secret

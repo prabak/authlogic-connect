@@ -5,7 +5,7 @@ MIT-LICENSE
 lib/authlogic_connect
 lib/authlogic_connect/common
 lib/authlogic_connect/common/session.rb
-lib/authlogic_connect/common/user.rb
+lib/authlogic_connect/common/login.rb
 lib/authlogic_connect/common/variables.rb
 lib/authlogic_connect/common.rb
 lib/authlogic_connect/oauth
@@ -26,7 +26,7 @@ lib/authlogic_connect/oauth/tokens/smug_mug_token.rb
 lib/authlogic_connect/oauth/tokens/twitter_token.rb
 lib/authlogic_connect/oauth/tokens/vimeo_token.rb
 lib/authlogic_connect/oauth/tokens/yahoo_token.rb
-lib/authlogic_connect/oauth/user.rb
+lib/authlogic_connect/oauth/login.rb
 lib/authlogic_connect/oauth/variables.rb
 lib/authlogic_connect/oauth.rb
 lib/authlogic_connect/openid
@@ -37,7 +37,7 @@ lib/authlogic_connect/openid/tokens/blogger_token.rb
 lib/authlogic_connect/openid/tokens/flickr_token.rb
 lib/authlogic_connect/openid/tokens/my_openid_token.rb
 lib/authlogic_connect/openid/tokens/openid_token.rb
-lib/authlogic_connect/openid/user.rb
+lib/authlogic_connect/openid/login.rb
 lib/authlogic_connect/openid/variables.rb
 lib/authlogic_connect/openid.rb
 lib/oauth_callback_filter.rb
