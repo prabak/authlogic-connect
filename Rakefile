@@ -28,8 +28,7 @@ end
 
 desc "Create .gemspec file (useful for github)"
 task :gemspec do
-  #File.open("pkg/#{spec.name}.gemspec", "w") do |f|
-  File.open("#{spec.name}.gemspec", "w") do |f|
+  File.open("pkg/#{spec.name}.gemspec", "w") do |f|
     f.puts spec.to_ruby
   end
 end
