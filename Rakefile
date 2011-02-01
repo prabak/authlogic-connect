@@ -28,19 +28,19 @@ end
 
 desc "Create .gemspec file (useful for github)"
 task :gemspec do
-  File.open("#{spec.name}.gemspec", "w") do |f|
+  File.open("pkg/#{spec.name}.gemspec", "w") do |f|
     f.puts spec.to_ruby
   end
 end
 
 desc "Build the gem into the current directory"
 task :gem => :gemspec do
-  `gem build #{spec.name}.gemspec`
+  `gem build pkg/#{spec.name}.gemspec`
 end
 
 desc "Publish gem to rubygems"
 task :publish => [:package] do
-  %x[gem push #{spec.name}-#{spec.version}.gem]
+  %x[gem push pkg/#{spec.name}-#{spec.version}.gem]
 end
 
 desc "Print a list of the files to be put into the gem"
@@ -54,12 +54,12 @@ end
 
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec    = spec
-  pkg.package_dir = "."
+  pkg.package_dir = "pkg"
 end
 
 desc "Install the gem locally"
 task :install => [:package] do
-  sh %{gem install #{spec.name}-#{spec.version} --no-ri --no-rdoc}
+  sh %{gem install pkg/#{spec.name}-#{spec.version} --no-ri --no-rdoc}
 end
 
 desc "Generate the rdoc"
