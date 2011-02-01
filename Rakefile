@@ -54,7 +54,7 @@ end
 
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.gem_spec    = spec
-  pkg.package_dir = "pkg"
+  pkg.package_dir = ""
 end
 
 desc "Install the gem locally"
