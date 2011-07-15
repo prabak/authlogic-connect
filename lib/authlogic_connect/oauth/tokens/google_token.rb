@@ -31,7 +31,7 @@ class GoogleToken < OauthToken
      :request_token_path => "/accounts/OAuthGetRequestToken",
      :authorize_path     => "/accounts/OAuthAuthorizeToken",
      :access_token_path  => "/accounts/OAuthGetAccessToken",
-     :scope              => "https://www.googleapis.com/auth/userinfo#email"
+     :scope              => "https://www.googleapis.com/auth/userinfo#email https://www.google.com/m8/feeds/"
 
    key do |access_token|
      body = JSON.parse(access_token.get("https://www.googleapis.com/userinfo/email?alt=json").body)
